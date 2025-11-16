@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,16 +25,16 @@ public class MainActivity extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(this);
 
-        // Pola do dodawania
+
         noteTitleInput = findViewById(R.id.noteTitleInput);
         noteInput = findViewById(R.id.noteInput);
         saveButton = findViewById(R.id.saveButton);
 
-        // Pola do usuwania
+
         deleteIdInput = findViewById(R.id.deleteIdInput);
         deleteButton = findViewById(R.id.deleteButton);
 
-        // Pola do aktualizacji
+
         updateIdInput = findViewById(R.id.updateIdInput);
         updateNoteInput = findViewById(R.id.updateNoteInput);
         updateTitleInput = findViewById(R.id.updateTitleInput);
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        // tutaj sie aktualizuje pola tylk ote które uzytkownik podał
+
         if (!newTitle.isEmpty()) {
             values.put(DatabaseHelper.COLUMN_TITLE, newTitle);
         }
