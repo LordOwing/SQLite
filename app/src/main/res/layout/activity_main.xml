@@ -68,13 +68,22 @@
             android:layout_height="wrap_content"
             android:text="Aktualizuj notatkę" />
 
-        <!-- Wyświetlanie notatek -->
+        <!-- Zadanie 4: Komunikat gdy brak notatek -->
         <TextView
-            android:id="@+id/notesDisplay"
+            android:id="@+id/emptyView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:textSize="16sp" />
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="Brak notatek. Dodaj pierwszą!"
+            android:visibility="gone" />
+
+        <!-- RecyclerView do wyświetlania notatek (zastępuje notesDisplay) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp" />
 
     </LinearLayout>
 </ScrollView>
