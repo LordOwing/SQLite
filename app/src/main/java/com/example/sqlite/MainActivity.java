@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.OnIte
 
         dbHelper = new DatabaseHelper(this);
 
-        // Inicjalizacja pól wejściowych
+
         noteTitleInput = findViewById(R.id.noteTitleInput);
         noteInput = findViewById(R.id.noteInput);
         saveButton = findViewById(R.id.saveButton);
@@ -44,17 +44,17 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.OnIte
         updateNoteInput = findViewById(R.id.updateNoteInput);
         updateButton = findViewById(R.id.updateButton);
 
-        // Inicjalizacja RecyclerView i komunikatu o pustej liście
+
         notesRecyclerView = findViewById(R.id.notesRecyclerView);
         emptyView = findViewById(R.id.emptyView);
 
-        // Inicjalizacja RecyclerView
+
         noteList = new ArrayList<>();
         adapter = new NoteAdapter(noteList, this);
         notesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         notesRecyclerView.setAdapter(adapter);
 
-        // Nasłuchiwacze przycisków
+
         saveButton.setOnClickListener(v -> addNote());
         deleteButton.setOnClickListener(v -> deleteNoteById());
         updateButton.setOnClickListener(v -> updateNote());
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.OnIte
         loadNotes();
     }
 
-    // Zadanie 3: Usuwanie przez kliknięcie na wiersz
+
     private void deleteNote(long id) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.delete(DatabaseHelper.TABLE_NOTES,
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.OnIte
 
     @Override
     public void onItemClick(long id) {
-        // Zadanie 3: Usuwanie po kliknięciu na wiersz
+
         deleteNote(id);
     }
 
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.OnIte
                 DatabaseHelper.COLUMN_NOTE
         };
 
-        // Zadanie 5: Sortowanie malejąco według ID
+
         String sortOrder = DatabaseHelper.COLUMN_ID + " DESC";
 
         Cursor cursor = db.query(
@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.OnIte
 
         adapter.notifyDataSetChanged();
 
-        // Zadanie 4: Wyświetlanie komunikatu gdy brak danych
+
         if (noteList.isEmpty()) {
             notesRecyclerView.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);

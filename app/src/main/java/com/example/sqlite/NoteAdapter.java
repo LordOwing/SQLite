@@ -36,7 +36,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         holder.noteTitle.setText("Tytuł: " + (note.getTitle() == null ? "(Bez tytułu)" : note.getTitle()));
         holder.noteContent.setText("Treść: " + note.getContent());
 
-        // Zadanie 3: Implementacja usuwania po kliknięciu
+
         holder.itemView.setOnClickListener(v -> {
             if (listener != null) {
                 listener.onItemClick(note.getId());

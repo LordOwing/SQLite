@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Sekcja dodawania -->
+
         <EditText
             android:id="@+id/noteTitleInput"
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Zapisz notatkę" />
 
-        <!-- Sekcja usuwania -->
+
         <EditText
             android:id="@+id/deleteIdInput"
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Usuń notatkę" />
 
-        <!-- Sekcja aktualizacji -->
+
         <EditText
             android:id="@+id/updateIdInput"
             android:layout_width="match_parent"
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:text="Aktualizuj notatkę" />
 
-        <!-- Zadanie 4: Komunikat gdy brak notatek -->
+
         <TextView
             android:id="@+id/emptyView"
             android:layout_width="match_parent"
@@ -78,7 +78,7 @@
             android:text="Brak notatek. Dodaj pierwszą!"
             android:visibility="gone" />
 
-        <!-- RecyclerView do wyświetlania notatek (zastępuje notesDisplay) -->
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/notesRecyclerView"
             android:layout_width="match_parent"
